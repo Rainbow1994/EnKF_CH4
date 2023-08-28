@@ -1,0 +1,28 @@
+#!/bin/sh
+
+#PBS -N run_geos_2x25
+#PBS -l nodes=1:ppn=12
+##PBS -l host=n06
+#PBS -q q1
+#PBS -j oe
+# configure the enviroment
+export FC=ifort
+export CC=icc
+export CXX=icpc
+
+export NETCDF_HOME=/home/modules/libs/netcdf/c/4.5.0/gcc-4.8.5
+export GC_BIN=$NETCDF_HOME/bin
+export GC_INCLUDE=$NETCDF_HOME/include
+export GC_LIB=$NETCDF_HOME/lib # Yes we are the some systems indicated by GC Wiki.
+export NETCDF_FORTRAN_HOME=/home/modules/libs/netcdf/fortran/4.4.4/intel.19.1.2.254
+export GC_F_BIN=$NETCDF_FORTRAN_HOME/bin
+export GC_F_INCLUDE=$NETCDF_FORTRAN_HOME/include
+export GC_F_LIB=$NETCDF_FORTRAN_HOME/lib
+
+# configure the OpenMP
+ulimit -s unlimited
+export OMP_NUM_THREADS=48
+export OMP_STACKSIZE=500m
+
+cd /home/shzhu/enkf_ch4/rerun_geos/new
+./geos.mp

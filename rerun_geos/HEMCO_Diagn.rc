@@ -1,0 +1,24 @@
+#------------------------------------------------------------------------------
+#                  GEOS-Chem Global Chemical Transport Model                  !
+#------------------------------------------------------------------------------
+#BOP
+#
+# !MODULE: HEMCO_Diagn.rc 
+#
+# !DESCRIPTION: Configuration file for netCDF diagnostic output from HEMCO.
+#\\
+#\\
+# !REMARKS:
+#  Customized for the CH4 simulation.
+#
+# !REVISION HISTORY:
+#  18 Oct 2018 - R. Yantosca - Added comment header and longname metadata.
+#                              Also changed output unit to kg/m2/s.                    
+#EOP
+#------------------------------------------------------------------------------
+#BOC
+# Name               Spec ExtNr Cat Hier Dim  OutUnit  LongName
+EmisCH4_Total        CH4   -1   -1   -1   2   kg/m2/s  CH4_emissions_from_all_sectors
+EmisCH4_ANTHRO       CH4    0    1   -1   2   kg/m2/s  CH4_emissions_from_human_beings
+EmisCH4_NATURE       CH4    0    2   -1   2   kg/m2/s  CH4_emissions_from_nature
+#EOC

@@ -1,0 +1,15 @@
+#!/bin/sh
+
+##PBS -N sampling_clim_oh
+#PBS -N sampling_two-step_oh
+#PBS -l nodes=1:ppn=12
+##PBS -l hostname=n01
+#PBS -q q1
+#PBS -j oe
+
+cd /home/shzhu/enkf_ch4/inv_code/obs/
+#cd /home/shzhu/enkf_ch4/rundirs/grid_2x25_new/obs/
+#./gosat_cor.py
+# ./noaa.py
+./gosat.py
+# ./tropomi.py
