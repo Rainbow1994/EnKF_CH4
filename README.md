@@ -35,10 +35,11 @@ We acknowledge the GEOS-Chem community, in particular the Harvard University tea
 
 ## Configuration
 
-
+Python setup
 ```bash
-# Example installation commands
-npm install
+# Python environment installation 
+$ conda env create -vv -n enkf -f enkf_environment.yml
+$ source activate enkf
 ```
 
 ## Framework
