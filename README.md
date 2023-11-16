@@ -84,7 +84,7 @@ _We appreciate all of the scientists and professionals who contributed to the da
 #### CH4 concentration
 The decadal mean difference between GOSAT-retrieved methane column concentrations (XCH4) and those simulated using GEOS-Chem with a priori emissions at 4x5 (R4, a) and 2x2.5 (R2, b) scales and using a posteriori emissions after inversion at grid scales of R4 (c) and R2 (d).
 
-<img src="https://github.com/Rainbow1994/EnKF_CH4/blob/master/images/GOSAT_comparison.png" width="500">
+<img src="https://github.com/Rainbow1994/EnKF_CH4/blob/master/images/GOSAT_comparison.jpg" width="500">
 
 #### CH4 flux
 Decadal mean distribution of a priori and a posteriori methane emissions in using R4 (a, d) and the R2 (b, e) inversions and their differences (a posteriori minus a priori) (c, f).
