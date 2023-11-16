@@ -6,12 +6,13 @@
 This repository is a global methane emission assimilation system based on an Ensemble Kalman Filter (EnKF) framework and the GEOS-Chem transport model (v12.5.0). It is an updated version of the ESA PyOSSE: Package for Observation System Simulation Experiments developed by [Liang Feng](https://www.geos.ed.ac.uk/~lfeng/) We have converted the original FORTRAN modules to Python scripts for better use and easier update.
 
 Included in this repository are:
-  - Tag run program to create Jacobi Matrix;
+  - Tag run program to create Jacobi matrix;
   - Zip file for GEOS-Chem v12.5.0 and user-updated global_CH4.f for easier Tag run;
   - Scripts to create inversion run directory, GEOS-Chem rerun directory and diagnosis directories;
   - Configuration files that specify inversion options and diagnosis options;
   - Scripts to run GEOS-Chem tests;
-  - Scripts for CH4 observations, including GOSAT, TROPOMI, NOAA, TCCON;  
+  - Scripts for CH4 observations, including GOSAT, TROPOMI, NOAA, TCCON;
+  - Scripts to correct GEOS-Chem CH4 latitudinal biases during inversion;
   - Main Driver routines.
 
 
@@ -50,9 +51,9 @@ $ source activate enkf
 
 Data | Usage  | Official Access
 | :--- | :--- |:---
-NOAA ObsPack products | In-situ CH_4 recordings for inversion| [Global Monitoring Laboratory (noaa.gov)](https://gml.noaa.gov/ccgg/obspack/release_notes.html#obspack_ch4_1_GLOBALVIEWplus_v5.0_2022-10-17)
-GOSAT Proxy XCH4 data(v9.0)| GOSAT XCH_4 retrievals for inversion | [University of Leicester GOSAT Proxy XCH4 v9.0](https://catalogue.ceda.ac.uk/uuid/18ef8247f52a4cb6a14013f8235cc1eb)
-ACE-FTS CH_4 profiles(v4.1)| CH_4 profiles for GEOS-chem latitudinal bias correction| [Data access](https://databace.scisat.ca/) and [Data quality flags](https://borealisdata.ca/dataset.xhtml?persistentId=doi:10.5683/SP2/BC4ATC)
+NOAA ObsPack products | In-situ CH4 recordings for inversion| [Global Monitoring Laboratory (noaa.gov)](https://gml.noaa.gov/ccgg/obspack/release_notes.html#obspack_ch4_1_GLOBALVIEWplus_v5.0_2022-10-17)
+GOSAT Proxy XCH4 data(v9.0)| GOSAT XCH4 retrievals for inversion | [University of Leicester GOSAT Proxy XCH4 v9.0](https://catalogue.ceda.ac.uk/uuid/18ef8247f52a4cb6a14013f8235cc1eb)
+ACE-FTS CH4 profiles(v4.1)| CH4 profiles for GEOS-chem latitudinal bias correction| [Data access](https://databace.scisat.ca/) and [Data quality flags](https://borealisdata.ca/dataset.xhtml?persistentId=doi:10.5683/SP2/BC4ATC)
 TCCON data| In-situ XCH4 measurements for validation | [TCCON Data Archive](https://tccondata.org/)
 
 _We appreciate all of the scientists and professionals who contributed to the datasets listed above._
