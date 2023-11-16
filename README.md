@@ -3,11 +3,11 @@
 
 ## Description
 
-This repository is a global methane emission assimilation system based on an Ensemble Kalman Filter (EnKF) framework and the GEOS-Chem transport model (v12.5.0). It is an updated version of the ESA PyOSSE: Package for Observation System Simulation Experiments developed by [Liang Feng](https://www.geos.ed.ac.uk/~lfeng/) We have converted the original FORTRAN modules to Python scripts for better use and easier update.
+This repository is a global methane emission assimilation system based on an Ensemble Kalman Filter (EnKF) framework and the GEOS-Chem Global Chemical Transport Model (v12.5.0). It is an updated version of the ESA PyOSSE: Package for Observation System Simulation Experiments developed by [Liang Feng](https://www.geos.ed.ac.uk/~lfeng/). We have converted the original FORTRAN modules to Python scripts for better use and easier update.
 
 Included in this repository are:
   - Tag run program to create Jacobi matrix;
-  - Zip file for GEOS-Chem v12.5.0 and user-updated global_CH4.f for easier Tag run;
+  - Zip file for GEOS-Chem v12.5.0 and user-updated global_ch4_mod.F for easier Tag run;
   - Scripts to create inversion run directory, GEOS-Chem rerun directory and diagnosis directories;
   - Configuration files that specify inversion options and diagnosis options;
   - Scripts to run GEOS-Chem tests;
@@ -36,11 +36,32 @@ We acknowledge the GEOS-Chem community, in particular the Harvard University tea
 
 ## Configuration
 
-Python setup
+#### Python setup
 ```bash
 # Python environment installation 
-$ conda env create -vv -n enkf -f enkf_environment.yml
-$ source activate enkf
+$ conda env create -vv -n idp -f enkf_environment.yml
+$ source activate idp
+```
+
+#### Tag run
+```bash
+# configuration
+$ cd  .../global_tagrun/code/
+$ vim geos_chem_def.py
+# tag run 
+$ ./enkf_drive_sh.py
+```
+
+#### Inversion run
+
+```bash
+# configuration
+$ vim /obs/operator_config.py ## Observation options
+$ cd  .../enkf/
+$ vim geos_chem_def.py  ## inversion options and diagnosis path
+$ vim restart_config.py 
+# inversion run 
+$ ./etkf_main.py
 ```
 
 ## Framework
@@ -60,6 +81,29 @@ _We appreciate all of the scientists and professionals who contributed to the da
 
 ## Examples
 
+#### CH4 concentration
+The decadal mean difference between GOSAT-retrieved methane column concentrations (XCH4) and those simulated using GEOS-Chem with a priori emissions at 4x5 (R4, a) and 2x2.5 (R2, b) scales and using a posteriori emissions after inversion at grid scales of R4 (c) and R2 (d).
+
+<img src="https://github.com/Rainbow1994/EnKF_CH4/blob/master/images/GOSAT_comparison.png" width="500">
+
+#### CH4 flux
+Decadal mean distribution of a priori and a posteriori methane emissions in using R4 (a, d) and the R2 (b, e) inversions and their differences (a posteriori minus a priori) (c, f).
+
+<img src="https://github.com/Rainbow1994/EnKF_CH4/blob/master/images/flux.jpg" width="500">
+
+#### Global total emissions
+Annual mean variations of global total methane emissions (a) in R4 (blue) and R2 (orange) versions of the GEOS-Chem model and their monthly variations (b) from 2010 to 2019.
+
+<img src="https://github.com/Rainbow1994/EnKF_CH4/blob/master/images/total_emission.jpg" width="500">
+
+Global annual total emissions during the 2010s (Tg/yr).
+
+<img src="https://github.com/Rainbow1994/EnKF_CH4/blob/master/images/Table1.png" width="500">
+
+#### Validation
+Taylor diagrams of statistical results (correlation coefficient, standard deviation, and root-mean-square deviation (RMSD)) between surface-measured methane column concentrations (XCH4) from the TCCON network and those simulated using GEOS-Chem with a priori emissions at R4 (a) and R2 (b), and using a posteriori emissions after inversion at R4 (c) and R2 (d) (Deep blue: latitudes of TCCON sites are larger than 60°N; Green: the latitudes of sites are within 45° – 60°N; Yellow: the latitudes of sites are within 30° – 45°N; Red: the latitudes of sites are within –15°S – 45°N; Blue: The sites located in the mid-latitudes of SH).
+
+<img src="https://github.com/Rainbow1994/EnKF_CH4/blob/master/images/tccon.jpg" width="500">
 
 ## References
 [1] Feng, L., Palmer, P.I., Bösch, H. and Dance, S., 2009. Estimating surface CO 2 fluxes from space-borne CO 2 dry air mole fraction observations using an ensemble Kalman Filter. Atmospheric chemistry and physics, 9(8), 2619−2633, https://doi.org/10.5194/acp-9-2619-2009.
