@@ -3,15 +3,16 @@
 
 ## Description
 
-This program is  Global methane emission assimilation system based on EnKF
+This repository is a global methane emission assimilation system based on an Ensemble Kalman Filter (EnKF) framework and the GEOS-Chem transport model (v12.5.0). It is an updated version of the ESA PyOSSE: Package for Observation System Simulation Experiments developed by [Liang Feng](https://www.geos.ed.ac.uk/~lfeng/) We have converted the original FORTRAN modules to Python scripts for better use and easier update.
 
-This repository contains the GEOS-Chem science codebase. Included in this repository are:
-
-The source code for GEOS-Chem science routines;
-Scripts to create GEOS-Chem run directories;
-Template configuration files that specify run-time options;
-Scripts to run GEOS-Chem tests;
-Driver routines (e.g. main.F90) that enable GEOS-Chem to be run in several different implementations (as GEOS-Chem "Classic", as GCHP, etc.)
+Included in this repository are:
+  - Tag run program to create Jacobi Matrix;
+  - Zip file for GEOS-Chem v12.5.0 and user-updated global_CH4.f for easier Tag run;
+  - Scripts to create inversion run directory, GEOS-Chem rerun directory and diagnosis directories;
+  - Configuration files that specify inversion options and diagnosis options;
+  - Scripts to run GEOS-Chem tests;
+  - Scripts for CH4 observations, including GOSAT, TROPOMI, NOAA, TCCON;  
+  - Main Driver routines.
 
 
 ## Acknowlegdement
@@ -25,17 +26,15 @@ We acknowledge the GEOS-Chem community, in particular the Harvard University tea
 
 ## Table of Contents
 
-- [Installation](#installation)
+- [Configuration](#Configuration)
 - [Framework](#Framework)
 - [InputData](#InputData)
 - [Examples](#Examples)
-
 - [References](#References)
 - [License](#license)
 
-## Installation
+## Configuration
 
-[Explain how to install your project, including any dependencies. Use clear and step-by-step instructions.]
 
 ```bash
 # Example installation commands
