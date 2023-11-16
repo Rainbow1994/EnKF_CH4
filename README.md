@@ -6,13 +6,13 @@
 This repository is a global methane emission assimilation system based on an Ensemble Kalman Filter (EnKF) framework and the GEOS-Chem Global Chemical Transport Model (v12.5.0). It is an updated version of the ESA PyOSSE: Package for Observation System Simulation Experiments developed by [Liang Feng](https://www.geos.ed.ac.uk/~lfeng/). We have converted the original FORTRAN modules to Python scripts for better use and easier update.
 
 Included in this repository are:
-  - Tag run program to create Jacobian matrix;
-  - Zip file for GEOS-Chem v12.5.0 and user-updated global_ch4_mod.F for easier Tag run;
+  - Tag run program to create the Jacobian matrix needed for the EnKF;
+  - Zip file for GEOS-Chem v12.5.0 and user-updated global_ch4_mod.F for an easier way to define the tag run;
   - Scripts to create inversion run directory, GEOS-Chem rerun directory and diagnosis directories;
   - Configuration files that specify inversion options and diagnosis options;
   - Scripts to run GEOS-Chem tests;
   - Scripts for CH4 observations, including GOSAT, TROPOMI, NOAA, TCCON;
-  - Scripts to correct GEOS-Chem CH4 latitudinal biases during inversion;
+  - Scripts to correct GEOS-Chem CH4 latitudinal biases during inversion; and
   - Main Driver routines.
 
 
