@@ -113,7 +113,7 @@ Taylor diagrams of statistical results (correlation coefficient, standard deviat
 [3] Zhu, S., Feng, L., Liu, Y., Wang, J. and Yang, D., 2022. Decadal Methane Emission Trend Inferred from Proxy GOSAT XCH4 Retrievals: Impacts of Transport Model Spatial Resolution. Advances in Atmospheric Sciences, 39(8), 1343-1359, https://doi.org/10.1007/s00376-022-1434-6.
 
 ## License
-
+This project is licensed under the [MIT License](LICENSE).
 
 
 
