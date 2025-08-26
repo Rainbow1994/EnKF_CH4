@@ -1,5 +1,7 @@
 
 # EnKF_CH4
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16947849.svg)](https://doi.org/10.5281/zenodo.16947849)
+
 
 ## Description
 
